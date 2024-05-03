@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
 const SPEED = 200
+@onready var animation = $AnimatedSprite2D
 
 func _physics_process(delta):
+	animation.play("idle")
 	velocity = Vector2.ZERO
 	if Input.is_action_pressed("right"):
 		velocity.x += SPEED
@@ -14,3 +16,4 @@ func _physics_process(delta):
 		velocity.y += SPEED
 	velocity = velocity.normalized() * SPEED
 	move_and_slide()
+	

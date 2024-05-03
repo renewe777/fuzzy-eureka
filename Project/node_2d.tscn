@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjdcubioy1k3v"]
+
+[ext_resource type="Texture2D" uid="uid://dvuump5yfyyos" path="res://icon.svg" id="1_icjrx"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+position = Vector2(668, 315)
+energy = 1.44
+height = 0.12
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(411, 330)
+texture = ExtResource("1_icjrx")

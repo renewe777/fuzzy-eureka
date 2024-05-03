@@ -1,12 +1,66 @@
-[gd_scene load_steps=3 format=3 uid="uid://culdppmkjhktg"]
+[gd_scene load_steps=10 format=3 uid="uid://culdppmkjhktg"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_w7nbp"]
-[ext_resource type="Texture2D" uid="uid://co6ylxl3pxmuy" path="res://icon.svg" id="2_nvlm8"]
+[ext_resource type="Texture2D" uid="uid://dwcc8ktbxxk5o" path="res://Новая папка (3)/pixil-frame-0.png" id="2_00fg1"]
+[ext_resource type="Texture2D" uid="uid://d31lk1v80cywc" path="res://Новая папка (3)/pixil-frame-1.png" id="3_1h31x"]
+[ext_resource type="Texture2D" uid="uid://wtq27k4ebgnc" path="res://Новая папка (3)/pixil-frame-2.png" id="4_upd05"]
+[ext_resource type="Texture2D" uid="uid://bfk5qbm4pb2fg" path="res://Новая папка (3)/pixil-frame-3.png" id="5_5f50r"]
+[ext_resource type="Texture2D" uid="uid://cvsakxhyr21v3" path="res://Новая папка (3)/pixil-frame-4.png" id="6_pba5s"]
+[ext_resource type="Texture2D" uid="uid://divnwl887vaka" path="res://Новая папка (3)/pixil-frame-5.png" id="7_da67e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ja0u8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_00fg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1h31x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_upd05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5f50r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pba5s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_da67e")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iqp7p"]
+radius = 16.0162
+height = 59.9891
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(420, 340)
 script = ExtResource("1_w7nbp")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-texture = ExtResource("2_nvlm8")
+position = Vector2(-1, 2)
+scale = Vector2(0.052, 0.052)
+texture = ExtResource("2_00fg1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(1, 2)
+scale = Vector2(0.052, 0.052)
+sprite_frames = SubResource("SpriteFrames_ja0u8")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, 1)
+rotation = -1.5899
+shape = SubResource("CapsuleShape2D_iqp7p")
+one_way_collision_margin = 1.2
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2.43, 2.43)

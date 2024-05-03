@@ -11,8 +11,28 @@ config_version=5
 [application]
 
 config/name="00"
+run/main_scene="res://node_2d.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
+
+[input]
+
+Right={
+"deadzone": 0.5,
+"events": []
+}
+Left={
+"deadzone": 0.5,
+"events": []
+}
+Up={
+"deadzone": 0.5,
+"events": []
+}
+Down={
+"deadzone": 0.5,
+"events": []
+}
 
 [rendering]
 
